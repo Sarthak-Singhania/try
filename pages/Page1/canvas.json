@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 980,
+          "bottomRow": 2580,
           "containerStyle": "none",
           "snapRows": 124,
           "parentRowSpace": 1,
@@ -31,7 +31,7 @@
               "borderColor": "#E0DEDE",
               "isVisibleDownload": true,
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 5,
+              "topRow": 11,
               "isSortable": true,
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
@@ -63,16 +63,32 @@
                 },
                 {
                   "key": "primaryColumns.title.computedValue"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveButtonColor"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
                 }
               ],
               "needsHeightForContent": true,
               "leftColumn": 0,
               "delimiter": ",",
               "defaultSelectedRowIndex": 0,
+              "showInlineEditingOptionDropdown": true,
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisibleFilters": true,
               "isVisible": true,
-              "enableClientSideSearch": true,
+              "enableClientSideSearch": false,
               "version": 1,
               "totalRecordsCount": 0,
               "isLoading": false,
@@ -100,7 +116,7 @@
                 }
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "columnUpdatedAt": 1677679532543,
+              "columnUpdatedAt": 1677680299824,
               "defaultSelectedRowIndices": [
                 0
               ],
@@ -111,11 +127,19 @@
                 "stock",
                 "image",
                 "sku",
-                "title"
+                "title",
+                "EditActions1"
               ],
-              "dynamicPropertyPathList": [],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                }
+              ],
               "displayName": "Table",
-              "bottomRow": 98,
+              "bottomRow": 258,
               "columnWidthMap": {
                 "task": 245,
                 "step": 70,
@@ -173,8 +197,8 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "stock",
@@ -194,7 +218,7 @@
                   "alias": "image",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
-                  "columnType": "text",
+                  "columnType": "image",
                   "textColor": "",
                   "textSize": "0.875rem",
                   "fontStyle": "",
@@ -212,7 +236,8 @@
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"image\"]))}}",
                   "sticky": "",
                   "validation": {},
-                  "cellBackground": ""
+                  "cellBackground": "",
+                  "imageSize": "LARGE"
                 },
                 "sku": {
                   "allowCellWrapping": false,
@@ -271,6 +296,44 @@
                   "sticky": "",
                   "validation": {},
                   "cellBackground": ""
+                },
+                "EditActions1": {
+                  "allowCellWrapping": false,
+                  "index": 5,
+                  "width": 150,
+                  "originalId": "EditActions1",
+                  "id": "EditActions1",
+                  "alias": "EditActions1",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "editActions",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Save / Discard",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "sticky": "right",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "Save",
+                  "discardActionLabel": "Discard",
+                  "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}"
                 }
               },
               "key": "mm51yl0egz",
@@ -283,6 +346,7 @@
               "label": "Data",
               "searchKey": "",
               "parentId": "0",
+              "serverSidePaginationEnabled": false,
               "renderMode": "CANVAS",
               "horizontalAlignment": "LEFT",
               "isVisibleSearch": true,
